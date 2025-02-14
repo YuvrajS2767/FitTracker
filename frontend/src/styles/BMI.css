@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    background-color:#2c3e50;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column  ;
+    min-height: 100vh;
+}
+.main-content-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    height: 661px;
+    width: 320  px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sidebar h2{
+    text-decoration: underline;
+    margin: 25px;
+}
+
+.infoListHolder li{
+ text-align: justify;    
+ list-style-type: none;
+ text-transform: uppercase;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 10px 25px 10px 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.calculator-container {
+    width: 550px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.calculator-container:hover {
+    transform: translateY(-2px);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculate-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+.calculate-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.reset-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #0580fc;
+    border-radius: 8px;
+    display: none;
+    animation: slideDown 0.4s ease;
+}
+
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e6ed;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.bmi-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.bmi-value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.bmi-category {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Category colors */
+.underweight { background-color: #3498db; }
+.normal { background-color: #27ae60; }
+.overweight { background-color: #f1c40f; }
+.obese { background-color: #e74c3c; }
+
+.diet-btn {
+    width: 100%;
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.diet-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}
+
+.modal-overlay1 {
+    position: fixed;  /* Ensures it covers the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);  /* Dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Make sure it appears on top */
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+}
+
+.diet-suggestions h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.diet-suggestions ul {
+    padding-left: 20px;
+}
+
+.diet-suggestions li {
+    margin-bottom: 10px;
+    color: #666;
+}

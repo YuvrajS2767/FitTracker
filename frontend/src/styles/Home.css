@@ -1,0 +1,372 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "work sans";
+}
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(nutrition.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: black;
+  overflow: auto;
+}
+.main {
+  background-image: url("../assets/nutrition.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(nutrition.jpg);  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: black;
+  overflow: auto;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  width: 150px;
+  height: 75px;
+}
+
+.headerBtns {
+  width: 420px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.signinHLink, .registerBtnHLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 42px;
+  width: 100px;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 1s ease;
+}
+
+.signinHLink:hover, .registerBtnHLink:hover {
+  background: linear-gradient(135deg,#45297d 0%,#18763fae 100%);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.slogan-heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.slogan-heading-container h1 {
+  font-family: "Trirong";
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogInHLink-holder {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogInHLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: white;
+  font-size: 28px;
+  font-family: "Work Sans";
+  text-transform: uppercase;
+  text-shadow: 5px 5px 5px #000000;
+  text-underline-offset: 10px;
+}
+
+.BmiCalculatorSection, .CalorieCalculatorSection {
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "trirong";
+}
+
+.BmiCalculatorSection {
+  background: linear-gradient(45deg , #004D40 30%, #00A676 100%);
+}
+
+.CalorieCalculatorSection {
+  background: linear-gradient(45deg, #E0FFFF, #008080);
+}
+
+.BmiCalculatorSection-Heading, .CalorieCalculatorSection-Heading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-size: 34px;
+  text-shadow: 10px 10px 10px #000000;
+  text-align: center;
+}
+
+.CalorieCalculatorSection-Heading {
+  color: black;
+  text-shadow: 10px 10px 10px teal;
+}
+
+.BmiCalcButtonHolder, .CalorieCalcButtonHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 25px;
+}
+.bmiLogo1, .CalorieLogo1{
+  height: 250px;
+  width: 250px;
+  }
+  
+  .bmiLogo2, .CalorieLogo2{
+  margin-top:35px ;
+  height: 250px;
+  width: 250px;
+  }
+  
+  .CalorieLogo1{
+    margin-bottom: 50px;
+  }
+  
+  .CalorieLogo2{
+    margin-top: 70px;
+  }
+  
+  .bmiLogosHolder, .CalorieCalcLogoHolder{
+    display: flex;
+    justify-content: center;
+  }
+  .BmiDefinition, .bmiCalcDefinition, .CalorieDefinition, .calorieCalcDefinition{
+    font-family:work sans;
+    font-size: 24px;
+    }
+
+
+.CalorieCalcButton {
+  border: 2px solid black;
+  color: black;
+}
+
+.BmiCalcButton:hover, .CalorieCalcButton:hover {
+  transform: scale(1.1);
+}
+.bmiLogosHolder, .CalorieCalcLogoHolder{
+  display: flex;
+  justify-content: center;
+}
+
+.BmiCalculatorSection-inner1, .CalorieCalculatorSection-inner1{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.BmiCalculatorSection-inner2, .CalorieCalculatorSection-inner2{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.BmiInfoHolder{
+  padding:25px;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  }
+  .CalorieInfoHolder{
+    padding:25px;
+    width: 100%;
+    color: rgb(6, 6, 6);
+    display: flex;
+    flex-direction: row;
+    }
+
+  .BmiCalcButtonHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 25px;
+    
+  }
+  
+  .CalorieCalcButtonHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 25px;
+  }
+  
+  .BmiCalcButton, .CalorieCalcButton{
+    background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:  0.3s ease-in-out, color 0.3s ease-in-out;
+  
+  }
+  
+  .CalorieCalcButton{
+    border: 2px solid black;
+    color: black;
+  }
+  
+  .BmiCalcButton:hover {
+    transform: scale(1.1);
+  }
+  
+  .CalorieCalcButton:hover{
+    transform: scale(1.1);
+  }
+  
+  .BmiCalcToCalorieCalcDivider1{
+  background:linear-gradient(135deg,#004D40 30%, #00A676 100%);
+  height: 30px;
+  width: 100%;
+  } 
+  
+  .BmiCalcToCalorieCalcDivider2{
+    width: 100%;
+    height: 6px;
+    background-color: white;
+  }
+  
+  .BmiCalcToCalorieCalcDivider3{
+  height: 30px;
+  width: 100%;
+  background: linear-gradient(45deg, lightblue, darkblue);
+  }
+  
+  footer {
+    background-color: white; /* Teal background color */
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .footer-container {
+    border-radius: 6px;
+    box-shadow: 5px 5px 8px gray, 10px 10px 8px black;
+    background-color: #008080;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .footer-section p, .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .footer-section a.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .footer-section a:hover {
+    color: lightblue; 
+  }
+  
+  .footer-bottom {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: #006666; 
+    margin-top: 25px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  .slogan-heading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+   
+   .slogan-heading-container h1{
+     font-family:"Trirong";
+     box-sizing: border-box;
+     color: white;
+     font-size: 50px;
+     display: block;
+     text-shadow: 2px 2px 2px #000000;
+   }
+   .AddBtn {
+    background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.AddBtn:hover {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.CalorieDefinition, .calorieCalcDefinition {
+  text-shadow: 0.5px 0.5px 1px black;
+}
