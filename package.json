@@ -1,0 +1,47 @@
+{
+  "name": "fittracker-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    // Start both the backend and frontend in development mode
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    
+    // Start only the backend (Express server)
+    "server": "nodemon server.js",
+    
+    // Start the frontend in development mode
+    "client": "cd frontend && npm start",
+    
+    // Build both the frontend and backend
+    "build": "cd frontend && npm install && npm run build && cd .. && npm install",
+    
+    // Deploy to production (build frontend and backend)
+    "start": "npm run build && node server.js",
+    
+    // For Heroku deployment (or Render)
+    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    
+    // Clean up node_modules and rebuild
+    "clean": "rm -rf node_modules/ frontend/node_modules/ && npm install && cd frontend && npm install",
+    
+    // Test if necessary
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",  // Express for the backend
+    "cors": "^2.8.5",      // CORS middleware for handling cross-origin requests
+    "dotenv": "^16.4.7",   // To manage environment variables
+    "axios": "^1.7.9",     // For HTTP requests in backend and frontend
+    "morgan": "^1.10.0",   // HTTP request logger middleware for Node.js
+    
+    "concurrently": "^7.1.0",  // To run frontend and backend simultaneously in dev mode
+    "nodemon": "^2.0.7"        // For auto-reloading the backend server during development
+  },
+  "devDependencies": {
+    // Add any development dependencies here, such as testing tools
+  },
+  "engines": {
+    "node": "14.x",  // Specify the Node.js version (adjust as necessary)
+    "npm": "7.x"     // Specify the npm version (adjust as necessary)
+  }
+}
