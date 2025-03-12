@@ -8,8 +8,7 @@ const BMI = () => {
   const [bmiCategory, setBmiCategory] = useState("");
   const [progress, setProgress] = useState(0);
   const [showModal, setShowModal] = useState(false);
-
-  const token = localStorage.getItem("token");
+  const [error, setError] = useState(null); // Add error state
 
   const handleChange = (e) => {
     setBmiData({ ...bmiData, [e.target.name]: e.target.value });
@@ -24,7 +23,13 @@ const BMI = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!token) return;
+    const token = localStorage.getItem("token"); // Check token at submission time
+    if (!token) {
+      setError("Please log in to calculate your BMI");
+      return;
+    }
+
+    setError(null); // Clear previous errors
 
     try {
       const response = await calculateBMI(bmiData, token);
@@ -35,9 +40,11 @@ const BMI = () => {
       setProgress(Math.min(Math.max(((bmiValue - 15) / (40 - 15)) * 100, 0), 100));
     } catch (error) {
       console.error("BMI Calculation Error:", error);
+      setError("An error occurred during calculation.");
     }
   };
 
+  // ... rest of the component remains unchanged ...
   const handleReset = () => {
     setBmiData({ height: "", weight: "" });
     setBmiResult(null);
@@ -73,10 +80,15 @@ const BMI = () => {
 
   return (
     <div className="container">
+      {/* ... existing JSX ... */}
+
       <header>
         <h1>BMI Calculator</h1>
       </header>
       <div className="main-content-container">
+    
+<div class="sidebar-overlay"></div>
+
         <aside className="sidebar">
           <h2>ADDITIONAL INFORMATION</h2>
           <ul className="infoListHolder">
@@ -91,10 +103,11 @@ const BMI = () => {
           </ul>
         </aside>
 
-        <main className="main-content">
-          <div className="calculator-container">
-            <form onSubmit={handleSubmit}>
-              <div className="input-group">
+      <main className="main-content">
+        <div className="calculator-container">
+          <form onSubmit={handleSubmit}>
+            {/* ... form inputs ... */}
+            <div className="input-group">
                 <label>Height (cm)</label>
                 <input type="number" placeholder="Enter your Height" name="height" value={bmiData.height} onChange={handleChange} required />
               </div>
@@ -106,19 +119,22 @@ const BMI = () => {
                 <button className="calculate-btn" type="submit">Calculate</button>
                 <button className="reset-btn" type="button" onClick={handleReset}>Reset</button>
               </div>
-            </form>
-            {bmiResult && (
-              <div className="result1">
-                <div className="bmi-value">{bmiResult.toFixed(1)}</div>
+          </form>
+          {error && <p className="error">{error}</p>} {/* Display error message */}
+          {bmiResult && (
+            <div className="result1">
+              {/* ... result display ... */}
+              <div className="bmi-value">{bmiResult.toFixed(1)}</div>
                 <div className="bmi-category">{bmiCategory}</div>
                 <div className="progress-container">
                   <div className={`progress-fill ${bmiCategory.toLowerCase()}`} style={{ width: `${progress}%` }}></div>
                 </div>
                 <button className="diet-btn" onClick={() => setShowModal(true)}>Get Diet Suggestions</button>
-              </div>
-            )}
-          </div>
-        </main>
+            </div>
+          )}
+        </div>
+      </main>
+      {/* ... modal and other JSX ... */}
       </div>
       {showModal && (
         <div className="modal-overlay1" onClick={() => setShowModal(false)}>
@@ -135,7 +151,7 @@ const BMI = () => {
           </div>
         </div>
       )}
-    </div>
+    </div> 
   );
 };
 
