@@ -4,33 +4,26 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    
     "server": "nodemon server.js",
-    
     "client": "cd frontend && npm start",
-    
     "build": "cd frontend && npm install && npm run build && cd .. && npm install",
-    
     "start": "npm run build && node server.js",
-    
     "heroku-postbuild": "cd frontend && npm install && npm run build",
-    
     "clean": "rm -rf node_modules/ frontend/node_modules/ && npm install && cd frontend && npm install",
-    
     "test": "echo \"No tests yet\""
   },
   "dependencies": {
-    "express": "^4.21.2",  // Express for the backend
-    "cors": "^2.8.5",      // CORS middleware for handling cross-origin requests
-    "dotenv": "^16.4.7",   // To manage environment variables
-    "axios": "^1.7.9",     // For HTTP requests in backend and frontend
-    "morgan": "^1.10.0",   // HTTP request logger middleware for Node.js
-    
-    "concurrently": "^7.1.0",  // To run frontend and backend simultaneously in dev mode
-    "nodemon": "^2.0.7"        // For auto-reloading the backend server during development
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "axios": "^1.7.9",
+    "morgan": "^1.10.0",
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.7"
   },
+  "devDependencies": {},
   "engines": {
-    "node": "14.x",  // Specify the Node.js version (adjust as necessary)
-    "npm": "7.x"     // Specify the npm version (adjust as necessary)
+    "node": "14.x",
+    "npm": "7.x"
   }
 }
